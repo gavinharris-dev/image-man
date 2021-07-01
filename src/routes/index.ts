@@ -35,7 +35,7 @@ router.get("/f/:fileName", function (req, res, next) {
 
     const sharpWorker = sharp()
       .resize(width, height, {
-        position: ''
+        // position: ''
       })
       .jpeg({ quality: quality });
 
