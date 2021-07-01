@@ -43,7 +43,6 @@ router.get("/f/:fileName", function (req, res, next) {
 
     stream.pipe(sharpWorker).pipe(res);
   } catch (err) {
-    console.log(err);
     res.status(400).json({ msg: err.message, code: 101 });
   }
 });
@@ -67,11 +66,10 @@ router.post("/", async function (req, res, next) {
   }
 
   try {
-    console.log("File", req.files.img);
     await upload(req.files.img, req.files.img.md5);
     res.status(201).json({ url: `${BASE_URL}/f/${req.files.img.md5}` });
   } catch (err) {
-    console.error(err, err.stack);
+    // console.error(err, err.stack);
     res.status(500).send();
   }
 });

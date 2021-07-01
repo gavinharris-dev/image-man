@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "tsc && node -r dotenv/config dist/bin/www.js",
     "start": "tsc && node dist/bin/www.js",
-    "test": "tsc && clear && jest"
+    "test": "clear && jest"
   },
   "dependencies": {
     "@google-cloud/storage": "5.8.5",
